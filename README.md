@@ -1,9 +1,12 @@
 # spring-rest-example
+
+Este projeto é um CRUD simples usando as seguintes tecnologia:
 - Spring boot
 - Spring mvc
+- Spring Rest
 - Spring jpa
 - MySql
-- Lonbok
+- Lombok
 
 ## Pré-requisitos
 1. Ter instalado o MySql na porta 3306
@@ -16,41 +19,35 @@
 3. Executar o projeto: `mvn spring-boot:run`
 
 ## Features:
-### GET
 
-Busca todas as tarefas.
+1. ### GET `http://localhost:8088/api/tarefas` Buscar todas as tarefas.
+   - Retorna o código `200` e uma lista de `Tarefas`.
 
-URL: `http://localhost:8088/api/tarefas`
+2. ### POST `http://localhost:8088/api/tarefas` Salvar uma tarefa nova.
 
-### POST
+   - Envia um json com uma Tarefa: 
+	~~~
+	{
+		"nome": "Tarefa 1"
+	}
+	~~~
 
-Salva uma tarefa nova.
+   - Retorna o código `200` em caso de sucesso e o objeto json persistido.
 
-URL: `http://localhost:8088/api/tarefas`
-body: 
-~~~
-{
-	"nome": "Tarefa 1"
-}
-~~~
+3. ### PUT `http://localhost:8088/api/tarefas/{ID}` Alterar uma tarefa.
 
-### PUT
+   - Envia um json com uma Tarefa no body e o Id da Tarefa que será alterada no Path: 
+	~~~
+	{
+		"nome": "Tarefa 1"
+	}
+	~~~
 
-Altera uma tarefa.
+   - Retorna o código `200` em caso de sucesso e o objeto json persistido.
 
-URL: `http://localhost:8088/api/tarefas/{ID}`
-body: 
-~~~
-{
-	"nome": "Tarefa 999"
-}
-~~~
-
-### DELET
-
-Exclui uma tarefa.
-URL: `http://localhost:8088/api/tarefas/{ID}`
-
+4. ### DELET `http://localhost:8088/api/tarefas/{ID}` Excluir uma tarefa.
+   - Envia Id da Tarefa que será deletada no Path.
+   - Retorna o código `200` em caso de sucesso.
 
 
 

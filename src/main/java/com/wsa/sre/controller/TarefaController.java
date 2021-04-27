@@ -18,7 +18,7 @@ import com.wsa.sre.model.dto.TarefaRequest;
 import com.wsa.sre.service.TarefaService;
 
 @RestController
-@RequestMapping("/tarefas")
+@RequestMapping("/api/tarefas")
 public class TarefaController {
 	
 	@Autowired
